@@ -1,3 +1,15 @@
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="box">
+	<span class="box-wapper">
+    <button mat-fab  class="trash-button"
+  *ngIf="active" >削除</button>
+    <button mat-fab color="" 
+    (click)="active = false"
+  *ngIf="active"> 取消 </button>
+  </span>
+  <span class="box-wapper">
+    <button mat-fab color="primary"
+    (click)="active = true"
+  *ngIf="!active"> 編集 </button>
+  </span>
+  
+</div>
