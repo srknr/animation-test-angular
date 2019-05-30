@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { slideInLeftAnimation } from './animation';
+import { slideInLeftAnimation, slideOutLeftAnimation } from './animation';
 import { trigger, transition, style, useAnimation} from '@angular/animations';
 enum Delays {
   Fast = '0ms',
@@ -20,7 +20,7 @@ enum Delays {
        })
       ]),
       transition(':leave', [
-        useAnimation(slideInLeftAnimation, {
+        useAnimation(slideOutLeftAnimation, {
           params: {  delay: Delays.Fast }
         })
       ])
