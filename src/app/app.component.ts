@@ -24,6 +24,14 @@ enum Delays {
           params: {  delay: Delays.Fast }
         })
       ])
+    ]),
+    trigger('cancel', [
+      transition(':enter',[
+      useAnimation(slideInLeftAnimation, {
+        params: { delay: Delays.Second }
+      })
+        ]),/*enterとleaveはセット */
+    
     ])
   ]
 })
