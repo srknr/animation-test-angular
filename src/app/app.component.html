@@ -4,12 +4,12 @@
   *ngIf="active" @delete >削除</button>
     <button mat-fab color="" 
     (click)="active = false"
-  *ngIf="active"> 取消 </button>
+  *ngIf="active" @cancel>  取消 </button>
   </span>
   <span class="box-wapper">
     <button mat-fab color="primary"
     (click)="active = true"
-  *ngIf="!active"> 編集 </button>
+  *ngIf="!active" @edit> 編集 </button>
   </span>
   
 </div>

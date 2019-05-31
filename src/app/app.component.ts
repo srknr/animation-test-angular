@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { slideInLeftAnimation, slideOutLeftAnimation } from './animation';
+import { slideInLeftAnimation, slideOutLeftAnimation} from './animation';
 import { trigger, transition, style, useAnimation} from '@angular/animations';
 enum Delays {
   Fast = '0ms',
@@ -31,9 +31,21 @@ enum Delays {
         params: { delay: Delays.Second }
       })
         ]),/*enterとleaveはセット */
-    
+      transition(':leave', [
+        useAnimation(slideOutLeftAnimation, {
+          params: {delay: Delays.Second}
+        })
+      ])
+    ]),
+
+    trigger('edit', [
+      transition(':enter',[
+        useAnimation(slideOutLeftAnimation, {
+          params: {delay: Delays.Fast}
+        })
+      ])
     ])
-  ]
+  ]//end: animation
 })
 export class AppComponent  {
 

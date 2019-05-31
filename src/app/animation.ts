@@ -1,6 +1,4 @@
-import {animation,style,animate,keyframes} from '@angular/animations';
-
-
+import {animation,style,animate,keyframes,animateChild, query, stagger, state, transition, trigger} from '@angular/animations';
 
 export const slideInLeftAnimation = animation([
   style({ opacity:0, 'pointer-events': 'none'}),/* カーソルは変化させない*/
