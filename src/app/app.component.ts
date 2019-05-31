@@ -13,18 +13,19 @@ enum Delays {
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.scss' ],
   animations: [
-        trigger('delete', [/* triggerの第一引数は任意のstring */
+    trigger('delete', [/* triggerの第一引数は任意のstring */
       transition(':enter', [
-       useAnimation(slideInLeftAnimation, {
-         params: {  delay: Delays.Third }
-       })
-      ]),
-      transition(':leave', [
-        useAnimation(slideOutLeftAnimation, {
-          params: {  delay: Delays.Fast }
+        useAnimation(slideInLeftAnimation, {
+            params: {  delay: Delays.Third }
         })
+      ]),
+        transition(':leave', [
+          useAnimation(slideOutLeftAnimation, {
+            params: {  delay: Delays.Fast }
+          })
       ])
     ]),
+
     trigger('cancel', [
       transition(':enter',[
       useAnimation(slideInLeftAnimation, {
@@ -40,12 +41,17 @@ enum Delays {
 
     trigger('edit', [
       transition(':enter',[
+        useAnimation(slideInLeftAnimation, {
+          params: {delay: Delays.Third}
+        })
+      ]),
+      transition(':leave', [
         useAnimation(slideOutLeftAnimation, {
           params: {delay: Delays.Fast}
         })
       ])
     ])
-  ]//end: animation
+  ]
 })
 export class AppComponent  {
 
